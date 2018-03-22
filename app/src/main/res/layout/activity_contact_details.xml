@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="info.androidhive.phonebook.usecases.contactDetails.ContactDetailsActivity">
+
+
+
+        <RelativeLayout
+            android:id="@+id/iv_details_picture_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                tools:ignore="UnusedAttribute"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ic_account_circle_black_24dp"
+                android:id="@+id/iv_details_contact_picture"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/contact_details_profile_pic_height" />
+
+            <ImageView
+                android:background="@drawable/black_blending_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/contact_details_profile_pic_height" />
+
+            <LinearLayout
+                android:layout_marginTop="165dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="48dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_contact_full_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@android:color/white"
+                    tools:text="Steve Jobs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_contact_gender_age"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    tools:text="Male, 27 yrs"
+                    android:textColor="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_to_favourite"
+        android:src="@drawable/ic_favorite_white_24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_anchorGravity="bottom|right|end"
+        app:layout_anchor="@id/iv_details_picture_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+            android:layout_marginTop="@dimen/contact_details_profile_pic_height"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/contact_details_field_container_top_spacing"
+                style="@style/ContactDetailsFieldContainerStyle">
+
+                <ImageView
+                    style="@style/ContactDetailsFieldIconStyle"
+                    android:src="@drawable/ic_call_grey_24dp" />
+
+                <TextView
+                    style="@style/ContactDetailsFieldValueStyle"
+                    android:id="@+id/tv_contact_phone_number"
+                    tools:text="+91 8099 405553" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ContactDetailsFieldContainerStyle">
+
+                <ImageView
+                    style="@style/ContactDetailsFieldIconStyle"
+                    android:src="@drawable/ic_email_grey_24dp" />
+
+                <TextView
+                    style="@style/ContactDetailsFieldValueStyle"
+                    android:id="@+id/tv_contact_email_id"
+                    tools:text="manthony@gmail.com" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:clickable="false"
+                android:focusable="false"
+                style="@style/ContactDetailsFieldContainerStyle">
+
+                <ImageView
+                    style="@style/ContactDetailsFieldIconStyle"
+                    android:src="@drawable/ic_date_range_grey_24dp" />
+
+                <TextView
+                    style="@style/ContactDetailsFieldValueStyle"
+                    android:id="@+id/tv_contact_dob"
+                    tools:text="14/10/2014" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:clickable="false"
+                android:focusable="false"
+                style="@style/ContactDetailsFieldContainerStyle">
+
+                <ImageView
+                    style="@style/ContactDetailsFieldIconStyle"
+                    android:src="@drawable/ic_language_grey_24dp" />
+
+                <TextView
+                    style="@style/ContactDetailsFieldValueStyle"
+                    android:id="@+id/tv_contact_location"
+                    tools:text="India" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+

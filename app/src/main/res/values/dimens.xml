@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="contact_details_field_icon_height">32dp</dimen>
+    <dimen name="contact_details_profile_pic_height">250dp</dimen>
+    <dimen name="contact_details_field_container_padding">16dp</dimen>
+    <dimen name="contact_details_field_container_top_spacing">16dp</dimen>
+    <dimen name="contact_details_field_value_start_margin">24dp</dimen>
+</resources>
