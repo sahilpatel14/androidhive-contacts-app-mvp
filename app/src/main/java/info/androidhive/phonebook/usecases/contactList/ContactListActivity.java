@@ -46,6 +46,9 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
     private View mContactListContainer;
     private View mContactListEmptyContainer;
 
+    private DividerItemDecoration listItemDecoration;
+    private GridSpacingItemDecoration gridSpacingItemDecoration;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,21 +75,26 @@ public class ContactListActivity extends AppCompatActivity implements ContactLis
         mContactListEmptyContainer = findViewById(R.id.container_no_contacts);
         mRecyclerView = findViewById(R.id.rv_contact_list);
 
+        listItemDecoration = new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
+        gridSpacingItemDecoration = new GridSpacingItemDecoration(2, dpToPx(15), true);
+
         mAdapter = new ContactListAdapter(this);
         setupRecyclerView();
     }
 
     private void setupRecyclerView() {
 
+        mRecyclerView.removeItemDecoration(listItemDecoration);
+        mRecyclerView.removeItemDecoration(gridSpacingItemDecoration);
         switch (mLayoutType) {
             case LIST:
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-//                mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+                mRecyclerView.addItemDecoration(listItemDecoration);
                 break;
 
             case GRID:
                 mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-                mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(16), true));
+                mRecyclerView.addItemDecoration(gridSpacingItemDecoration);
         }
         mAdapter.setLayoutType(mLayoutType);
         mRecyclerView.setAdapter(mAdapter);
